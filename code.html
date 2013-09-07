@@ -20,8 +20,8 @@ document.write("<p>A</p>");
 log("b");
 var APP_CLIENT_ID = "0000000044100F5A"
 var REDIRECT_URL = "https://openskies.azurewebsites.net/code.html"
-
-WL.init({ client_id: APP_CLIENT_ID, redirect_uri: REDIRECT_URL, scope: "wl.signini+wl.skydrive+wil.skydrive_update+wil.offline_access", response_type: "token" });
+var scope = ["wl.signin", "wl.basic", "wl.offline_access"]
+WL.init({ client_id: APP_CLIENT_ID, redirect_uri: REDIRECT_URL, scope: scope, response_type: "token" });
 WL.Event.subscribe("auth.login", onLogin);
 WL.Event.subscribe("auth.sessionChange", onSessionChange);
 
