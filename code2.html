@@ -33,8 +33,11 @@ if (session) {
     WL.login({ scope: "wl.signin" });
 }
 function signin(){
-session = WL.getSession();
-WL.login({scope:"wl.signin"});
+//session = WL.getSession();
+WL.login({scope:"wl.signin"}, onLogin);
+}
+function onLogin(){
+  document.write("hi logged in");
 }
 
  
