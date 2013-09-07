@@ -42,9 +42,13 @@ function signin(){
   document.write(REDIRECT_URL);
   WL.login({scope:["wl.signin","wl.skydrive","wl.skydrive_update","wl.offline_access","wl.basic"]}, onLogin);
   document.write("<p>did it finish?</p>");
-  if (WL.getSession()){
+  <button id= "checksess" onclick="checksess()">Check session</button>
+}
+function checksess(){
+  if (session) {
     document.write("<p>got session</p>");
-  } else {
+  }
+  else {
     document.write("<p>did not get session</p>");
   }
 }
