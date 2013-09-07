@@ -46,7 +46,7 @@ function signin(){
 //  <button id= "checksess" onclick="checksess()">Check session</button>
 }
 function checksess(){
-  if (session) {
+  if (WL.getSession()) {
     document.write("<p>got session</p>");
   }
   else {
