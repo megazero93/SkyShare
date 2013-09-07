@@ -1,9 +1,9 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 	<title>Code Page</title>
-<script src="//js.live.net/v5.0/wl.js"></script>
+	<script src="//js.live.net/v5.0/wl.js"></script>
 
 </head>
 <body>
@@ -19,7 +19,7 @@ document.write("<p>A</p>");
     }, 0);}
 log("b");
 var APP_CLIENT_ID = "0000000044100F5A"
-var REDIRECT_URL = "http://openskies.azurewebsites.net/code.html"
+var REDIRECT_URL = "https://openskies.azurewebsites.net/code.html"
 
 WL.init({ client_id: APP_CLIENT_ID, redirect_uri: REDIRECT_URL, scope: "wl.signini+wl.skydrive+wil.skydrive_update+wil.offline_access", response_type: "code" });
 WL.Event.subscribe("auth.login", onLogin);
