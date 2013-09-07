@@ -14,7 +14,7 @@ define('CLIENTID', '0000000048103E6B');
 define('CLIENTSECRET', 'xhixQ5aLsNlN0Fan5DLQZ6vPbFvoltTd');
 
 // Make sure this is identical to the redirect_uri parameter passed in WL.init() call.
-define('CALLBACK', 'http://skyshare.azurewebsites.net/callback.php');
+define('CALLBACK', 'https://login.live.com/oauth20_desktop.srf');
 
 define('OAUTHURL', 'https://login.live.com/oauth20_token.srf');  
 
