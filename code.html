@@ -19,9 +19,10 @@
     }, 0);
 }
 
+var APP_CLIENT_ID = 0000000044100F5A
+var REDIRECT_URL =  http://openskies.azurewebsites.net/code.htm
 
-
-WL.init({ client_id: 0000000044100F5A, redirect_uri: http://openskies.azurewebsites.net/code.html });
+WL.init({ client_id: APP_CLIENT_ID, redirect_uri: REDIRECT_URL, scope: "wl.signini+wl.skydrive+wil.skydrive_update+wil.offline_access", response_type: "token" });
 WL.Event.subscribe("auth.login", onLogin);
 WL.Event.subscribe("auth.sessionChange", onSessionChange);
 
@@ -33,12 +34,17 @@ if (session) {
     WL.login({ scope: "wl.signin" });
 }
 
-function onLogin() {
-    var session = WL.getSession();
-    if (session) {
-        log("You are signed in!");
-    }
+
+function signInUser() {
+    WL.login({
+        scope: "wl.signin"
+    }, onLoginComplete);
 }
+
+document.write("<button onclick='signInUser()'>" +
+    "Sign In</button>");
+
+
  
 function onSessionChange() {
     var session = WL.getSession();
