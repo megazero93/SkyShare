@@ -45,6 +45,7 @@
         if (WL.getSession() != null) {
 	    var session = WL.getSession();
 	    aut_token = session.authentication_token;
+	    document.write(aut_token);
             WL.api({ path: "me/picture", method: "get" }).then(
                     function (response) {
                         if (response.location) {
