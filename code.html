@@ -35,16 +35,6 @@ if (session) {
 }
 
 
-function signInUser() {
-    WL.login({
-        scope: "wl.signin"
-    }, onLoginComplete);
-}
-
-document.write("<button onclick='signInUser()'>" +
-    "Sign In</button>");
-
-
  
 function onSessionChange() {
     var session = WL.getSession();
@@ -62,5 +52,17 @@ function log(message) {
  var prev = document.referrer;
   
 </script>
+
+function signInUser() {
+    WL.login({
+        scope: "wl.signin"
+    }, onLoginComplete);
+}
+
+document.write("<button onclick='signInUser()'>" +
+    "Sign In</button>");
+
+
+
 </body>
 
