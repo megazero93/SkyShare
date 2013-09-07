@@ -9,7 +9,7 @@
 <body>
 <h1>Hello</h1>
 <button id= "sign in" onclick="signin()">Sign In</button>
-
+<div id ="signin"></div>
 <script type="text/javascript">
 document.write("<p>A</p>");
 
@@ -25,6 +25,20 @@ WL.init({ client_id: APP_CLIENT_ID, redirect_uri: REDIRECT_URL, scope: "wl.signi
 WL.Event.subscribe("auth.login", onLogin);
 WL.Event.subscribe("auth.sessionChange", onSessionChange);
 
+function onLogin() {
+    document.getElementById("infoLabel").innerText = "Signed in.";
+}
+function onSessionChange() {
+    var session = WL.getSession();
+    if (session) {
+    document.getElementById("infoLabel").innerText =
+        "Something about the session changed.";
+    }
+    else {
+        document.getElementById("infoLabel").innerText =
+            "Signed out or session error.";
+    }
+}
 var session = WL.getSession();
 if (session) {
     log("You are already signed in!");
@@ -36,6 +50,10 @@ function signin(){
 session = WL.getSession();
 WL.login({scope:"wl.signini+wl.skydrive+wil.skydrive_update+wil.offline_access"});
 }
+WL.ui({
+    name: "signin",
+    element: "signin"
+});
 
  
 function onSessionChange() {
