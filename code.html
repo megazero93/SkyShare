@@ -6,8 +6,9 @@
 </head>
 <body>
 <h1>Hello</h1>
+<button id= "sign in" onclick="signin()"Sign In</button>
 
-<div id="signin"></div>
+
 <script src="//js.live.net/v5.0/wl.js">
 document.write("<p>A</p>");
 
@@ -30,7 +31,10 @@ if (session) {
  log("a");
     WL.login({ scope: "wl.signin" });
 }
-
+function signin(){
+session = WL.getSession();
+WL.login({scope:"wl.signin"});
+}
 
  
 function onSessionChange() {
