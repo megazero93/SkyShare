@@ -25,8 +25,8 @@ WL.init({ client_id: APP_CLIENT_ID,
 redirect_uri: REDIRECT_URL, 
 scope: "wl.signin+wl.skydrive+wl.skydrive_update+wl.offline_access+wl.basic", 
 response_type: "token" });
-//WL.Event.subscribe("auth.login", onLogin);
-//WL.Event.subscribe("auth.sessionChange", onSessionChange);
+WL.Event.subscribe("auth.login", onLogin);
+WL.Event.subscribe("auth.sessionChange", onSessionChange);
 
 //var session = WL.getSession();
 /*if (session) {
