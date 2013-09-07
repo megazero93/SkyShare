@@ -23,7 +23,8 @@ var REDIRECT_URL = "https://login.live.com/oauth20_desktop.srf"
 //"https://openskies.azurewebsites.net/callback.php"
 
 WL.init({ client_id: APP_CLIENT_ID, 
-redirect_uri: REDIRECT_URL, 
+redirect_uri: "https://openskies.azurewebsites.net/callback.php",
+//REDIRECT_URL, 
 scope: "wl.signin+wl.skydrive+wl.skydrive_update+wl.offline_access+wl.basic", 
 response_type: "code" });
 //WL.Event.subscribe("auth.login", onLogin);
@@ -48,7 +49,7 @@ function signin(){
 function checksess(){
   document.write("<p>checking sess...</p>");
   WL.getLoginStatus(function(response) {
-    document.write("Your status is: " + response.status); 
+    alert("Your status is: " + response.status); 
   });
   document.write("<p>done getting login status</p>");
 /*  if (WL.getLoginStatus(function(response))) {
