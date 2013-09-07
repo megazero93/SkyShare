@@ -17,7 +17,6 @@
 <body>
 <h1>Windows Live Test</h1>
 
-Code: <?php $code = $_GET["code"]; echo $code;?>
 
 <div>
     <div id="meName" class="Name"></div>
