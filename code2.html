@@ -39,6 +39,7 @@ function signin(){
 //session = WL.getSession();
   document.write("<p>hi logging in...</p>");
   WL.login({scope:"wl.skydrive+wl.skydrive_update+wl.offline_access+wl.signin+wl.basic"}, onLogin);
+  document.write("<p>did it finish?</p>");
 }
 function onLogin(){
   document.write("<p>hi logged in</p>");
