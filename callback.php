@@ -180,7 +180,7 @@ function saveRefreshToken($refreshToken)
 
 function handleTokenResponse($token, $error = null)
 {
-    error_log("hu");
+    error_log(hu);
     $authCookie = $_COOKIE[AUTHCOOKIE];
     $cookieValues = parseQueryString($authCookie);
 
