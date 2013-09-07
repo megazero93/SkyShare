@@ -1,0 +1,53 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<title>Code Page</title>
+	<script src="//js.live.net/v5.0/wl.js"></script>
+
+</head>
+<body>
+<h1>Hello</h1>
+<button id= "sign in" onclick="signin()">Sign In</button>
+
+<script type="text/javascript">
+document.write("<p>A</p>");
+
+       function log(msg) {
+    setTimeout(function() {
+        throw new Error(msg);
+    }, 0);}
+log("b");
+var APP_CLIENT_ID = "0000000044100F5A"
+var REDIRECT_URL = "https://openskies.azurewebsites.net/code.html"
+
+WL.init({ client_id: APP_CLIENT_ID, redirect_uri: REDIRECT_URL, scope: "wl.signini+wl.skydrive+wil.skydrive_update+wil.offline_access", response_type: "token" });
+WL.Event.subscribe("auth.login", onLogin);
+WL.Event.subscribe("auth.sessionChange", onSessionChange);
+
+var session = WL.getSession();
+if (session) {
+    log("You are already signed in!");
+} else {
+ log("a");
+    WL.login({ scope: "wl.signin" });
+}
+function signin(){
+session = WL.getSession();
+WL.login({scope:"wl.signin"});
+}
+
+ 
+function onSessionChange() {
+    var session = WL.getSession();
+    if (session) {
+        log("Your session has changed.");
+    }
+}
+
+</script>
+
+
+
+</body>
+</html>
