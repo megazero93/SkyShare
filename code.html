@@ -13,6 +13,11 @@
 <a href="https://login.live.com/oauth20_authorize.srf?scope=wl.skydrive+wl.skydrive_update+wl.offline_access&redirect_uri=https%3A%2F%2Fopenskies.azurewebsites.net%2Fcode.html&response_type=code&client_id=0000000044100F5A">SIGN IN</a>
 
 <script type="text/javascript">
+        function log(msg) {
+    setTimeout(function() {
+        throw new Error(msg);
+    }, 0);
+}
 
 
 
@@ -24,6 +29,7 @@ var session = WL.getSession();
 if (session) {
     log("You are already signed in!");
 } else {
+ log("a");
     WL.login({ scope: "wl.signin" });
 }
 
