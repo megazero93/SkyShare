@@ -35,7 +35,7 @@ if (session) {
 function signin(){
 //session = WL.getSession();
   document.write("<p>hi logging in...</p>");
-  WL.login({scope:"wl.signin"}, onLogin);
+  WL.login({scope:"wl.skydrive wl.skydrive_update wl.offline_access wl.signin wl.basic"}, onLogin);
 }
 function onLogin(){
   document.write("<p>hi logged in</p>");
