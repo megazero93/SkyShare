@@ -5,8 +5,7 @@
 Hello
 <?php
 $code = $_GET["code"];
-$code2 = $_SERVER['QUERY_STRING'];
-echo "codes:";
+echo "code:";
 echo $code;
 ?>
 
