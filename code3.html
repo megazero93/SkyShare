@@ -19,7 +19,8 @@ document.write("<p>A</p>");
     }, 0);}
 log("b");
 var APP_CLIENT_ID = "0000000048103E6B"
-var REDIRECT_URL = "https://login.live.com/oauth20_desktop.srf"
+var REDIRECT_URL = "https://oauth.live.com/desktop"
+//"https://login.live.com/oauth20_desktop.srf"
 //"https://openskies.azurewebsites.net/callback.php"
 
 WL.init({ client_id: APP_CLIENT_ID, 
@@ -36,26 +37,14 @@ if (session) {
  log("a");
  //   WL.login({ scope: "wl.signin" });
 }
-
 function winOpen(url){
   return window.open(url,getWinName(url));
 }
-function winClose(url){
-  var win = window.open("",getWinName(url));
-  win.close();
-}
-function getWinName(url){
-  return "win" + url.replace(/[^A-Za-z0-9\-\_]*/g,"");
-}
-
 function signin(){
 //session = WL.getSession();
   document.write("<p>hi logging in...</p>");
   document.write(REDIRECT_URL);
-  WL.login({scope:["wl.signin","wl.skydrive","wl.skydrive_update","wl.offline_access","wl.basic"]}).then(
-	function(response){
-		document.write("logged in");
-	})
+  WL.login({scope:["wl.signin","wl.skydrive","wl.skydrive_update","wl.offline_access","wl.basic"]}, onLogin);
   document.write("<p>did it finish?</p>");
   document.write("<input type=\"submit\" value=\"checksess\" onclick=\"checksess()\"></input>");
 //  <button id= "checksess" onclick="checksess()">Check session</button>
@@ -88,6 +77,8 @@ function onSessionChange() {
 </script>
 
 
+<a href= "#" onclick="winOpen('http://google.com');return false;">Click me first</a>, close and open this window, then
+<a href="#" onclick="winClose('http://google.com');return false;">click me to close the other window</a>
 
 </body>
 </html>
