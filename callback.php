@@ -17,7 +17,6 @@ define('CLIENTSECRET', 'xhixQ5aLsNlN0Fan5DLQZ6vPbFvoltTd');
 define('CALLBACK', 'http://skyshare.azurewebsites.net/callback.php');
 
 define('OAUTHURL', 'https://login.live.com/oauth20_token.srf');  
-bool error_log ( string $message [, int $message_type = 0 [, string $destination [, string $extra_headers ]]] )
 
 function buildQueryString($array)
 {
@@ -180,7 +179,6 @@ function saveRefreshToken($refreshToken)
 
 function handleTokenResponse($token, $error = null)
 {
-    error_log(hu);
     $authCookie = $_COOKIE[AUTHCOOKIE];
     $cookieValues = parseQueryString($authCookie);
 
