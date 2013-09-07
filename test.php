@@ -36,11 +36,14 @@
 
     function displayMe() {
         var imgHolder = id("meImg"),
-            nameHolder = id("meName");
+            nameHolder = id("meName"),
+	    aut_token = "";
 
         if (imgHolder.innerHTML != "") return;
 
         if (WL.getSession() != null) {
+	    var session = WL.getSession();
+	    aut_token = session.authentication_token;
             WL.api({ path: "me/picture", method: "get" }).then(
                     function (response) {
                         if (response.location) {
