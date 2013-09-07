@@ -14,7 +14,7 @@ define('CLIENTID', '0000000044100F5A');
 define('CLIENTSECRET', 'TvEBbUvG2Nni9WyIvoucv8N7Mx5QfZUf');
 
 // Make sure this is identical to the redirect_uri parameter passed in WL.init() call.
-define('CALLBACK', 'http://openskies.azurewebsites.net/callback.php');
+define('CALLBACK', 'https://openskies.azurewebsites.net/callback.php');
 
 define('OAUTHURL', 'https://login.live.com/oauth20_token.srf');  
 
