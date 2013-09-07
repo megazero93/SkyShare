@@ -47,7 +47,8 @@ function signin(){
 }
 function checksess(){
   WL.getLoginStatus(function(response) {
-    document.write("<p>status is: </p>" + response.status) 
+    document.write("<p>status is: </p>");
+    document.write(response.status); 
   });
 /*  if (WL.getLoginStatus(function(response))) {
     document.write("<p>got session</p>");
