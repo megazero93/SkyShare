@@ -4,12 +4,10 @@
 <body>
 Hello
 <?php
-$code = $_POST["code"];
+$code = $_GET["code"];
 $code2 = $_SERVER['QUERY_STRING'];
 echo "codes:";
 echo $code;
-echo "string:";
-echo $code2;
 ?>
 
 	</body>
