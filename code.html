@@ -10,6 +10,10 @@
 <body>
 <h1>Hello</h1>
 
+<div id="signin"></div>
+
+
+
 <a href="https://login.live.com/oauth20_authorize.srf?scope=wl.skydrive+wl.skydrive_update+wl.offline_access&redirect_uri=https%3A%2F%2Fopenskies.azurewebsites.net%2Fcode.html&response_type=code&client_id=0000000044100F5A">SIGN IN</a>
 
 <script type="text/javascript">
@@ -18,7 +22,10 @@
         throw new Error(msg);
     }, 0);
 }
-
+WL.ui({
+    name: "signin",
+    element: "signin"
+});
 var APP_CLIENT_ID = 0000000044100F5A
 var REDIRECT_URL =  http://openskies.azurewebsites.net/code.htm
 
@@ -52,15 +59,6 @@ function log(message) {
  var prev = document.referrer;
   
 </script>
-
-function signInUser() {
-    WL.login({
-        scope: "wl.signin"
-    }, onLoginComplete);
-}
-
-document.write("<button onclick='signInUser()'>" +
-    "Sign In</button>");
 
 
 
