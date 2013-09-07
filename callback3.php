@@ -123,7 +123,7 @@ function handlePageRequest()
 
     $url2 = 'http://skyshare.azurewebsites.net/test3.php/?code='.$verifier;
     redirect($url2, false);
-    exit();
+    //exit();
 
     if (!empty($verifier))
     {
