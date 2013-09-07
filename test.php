@@ -29,7 +29,7 @@
     // Update the following values
     var client_id = "0000000048103E6B",
         scope = ["wl.signin", "wl.basic", "wl.offline_access"],
-        redirect_uri = "http://skyshare.azurewebsites.net/callback2.php";
+        redirect_uri = "http://skyshare.azurewebsites.net/callback.php";
 
     function id(domId) {
         return document.getElementById(domId);
