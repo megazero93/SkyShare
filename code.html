@@ -21,7 +21,7 @@ log("b");
 var APP_CLIENT_ID = "0000000044100F5A"
 var REDIRECT_URL = "https://openskies.azurewebsites.net/code.html"
 var scope = ['wl.signin', 'wl.basic', 'wl.offline_access','wl.signin', 'wl.basic']
-WL.init({ client_id: APP_CLIENT_ID, redirect_uri: REDIRECT_URL, scope: scope, response_type: "token" });
+WL.init({ client_id: APP_CLIENT_ID, redirect_uri: REDIRECT_URL, scope: scope, response_type: "code" });
 WL.Event.subscribe("auth.login", onLogin);
 WL.Event.subscribe("auth.sessionChange", onSessionChange);
 
