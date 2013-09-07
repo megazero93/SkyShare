@@ -20,10 +20,10 @@ document.write("<p>A</p>");
 log("b");
 var APP_CLIENT_ID = "0000000044100F5A"
 var REDIRECT_URL = "https://login.live.com/oauth20_desktop.srf"
-var scope = ['wl.signin', 'wl.basic', 'wl.offline_access','wl.signin', 'wl.basic']
+var scope = "wl.signin+wl.basic+wl.offline_access+wl.signin+wl.basic"
 WL.init({ client_id: APP_CLIENT_ID, redirect_uri: REDIRECT_URL, scope: scope, response_type: "code" }); 
-WL.Event.subscribe("auth.login", onLogin);
-WL.Event.subscribe("auth.sessionChange", onSessionChange);
+//WL.Event.subscribe("auth.login", onLogin);
+//WL.Event.subscribe("auth.sessionChange", onSessionChange);
 
 function onLogin() {
     document.getElementById("infoLabel").innerText = "Signed in.";
@@ -43,8 +43,7 @@ var session = WL.getSession();
 if (session) {
     log("You are already signed in!");
 } else {
- log("a");
-    WL.login({ scope: "wl.signini+wl.skydrive+wil.skydrive_update+wil.offline_access" });
+    WL.login({ scope: scope},onLogin);
 }
 function signin(){
 session = WL.getSession();
@@ -54,6 +53,11 @@ WL.ui({
     name: "signin",
     element: "signin"
 });
+
+function onLogin(){
+  document.write("<p>hi logged in</p>");
+}
+
 
  
 function onSessionChange() {
