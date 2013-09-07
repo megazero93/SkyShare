@@ -46,11 +46,13 @@ function signin(){
 //  <button id= "checksess" onclick="checksess()">Check session</button>
 }
 function checksess(){
-  if (WL.getLoginStatus()) {
+  WL.getLoginStatus(function(response));
+  document.write(response.status);
+/*  if (WL.getLoginStatus(function(response))) {
     document.write("<p>got session</p>");
   }
   else {
-    document.write("<p>did not get session</p>");
+    document.write("<p>did not get session</p>");*/
   }
 }
 function onLogin(){
