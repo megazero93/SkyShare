@@ -16,15 +16,15 @@ document.write("<p>A</p>");
        function log(msg) {
     setTimeout(function() {
         throw new Error(msg);
-    }, 0);}/*
+    }, 0);}
 log("b");
 var APP_CLIENT_ID = "0000000044100F5A"
-var REDIRECT_URL = "https://openskies.azurewebsites.net/code.html"
+var REDIRECT_URL = "https://login.live.com/oauth20_authorize.srf?scope=wl.skydrive+wl.skydrive_update+wl.offline_access&redirect_uri=https%3A%2F%2Flogin.live.com%2Foauth20_desktop.srf&response_type=code&client_id=0000000044100F5A"
 var scope = ['wl.signin', 'wl.basic', 'wl.offline_access','wl.signin', 'wl.basic']
 WL.init({ client_id: APP_CLIENT_ID, redirect_uri: REDIRECT_URL, scope: scope, response_type: "code" }); 
 WL.Event.subscribe("auth.login", onLogin);
 WL.Event.subscribe("auth.sessionChange", onSessionChange);
-*/
+
 function onLogin() {
     document.getElementById("infoLabel").innerText = "Signed in.";
 }
