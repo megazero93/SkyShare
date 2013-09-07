@@ -42,6 +42,7 @@ function signin(){
   document.write(REDIRECT_URL);
   WL.login({scope:["wl.signin","wl.skydrive","wl.skydrive_update","wl.offline_access","wl.basic"]}, onLogin);
   document.write("<p>did it finish?</p>");
+  document.write("<input type=\"submit\" value=\"checksess\" onclick=\"checksess()\"></input>");
 //  <button id= "checksess" onclick="checksess()">Check session</button>
 }
 function checksess(){
