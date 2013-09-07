@@ -75,7 +75,7 @@
         }
     );
 
-    WL.init({ client_id: client_id, redirect_uri: redirect_uri, response_type: "code", scope: scope });
+    WL.init({ client_id: client_id, redirect_uri: redirect_uri, scope: scope, response_type: "code" });
 
     WL.ui({ name: "signin", element: "signin" });
 
