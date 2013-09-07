@@ -34,7 +34,8 @@ if (session) {
 }
 function signin(){
 //session = WL.getSession();
-WL.login({scope:"wl.signin"}, onLogin);
+  document.write("hi logging in...");
+  WL.login({scope:"wl.signin"}, onLogin);
 }
 function onLogin(){
   document.write("hi logged in");
