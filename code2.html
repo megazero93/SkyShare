@@ -26,12 +26,12 @@ WL.Event.subscribe("auth.login", onLogin);
 WL.Event.subscribe("auth.sessionChange", onSessionChange);
 
 var session = WL.getSession();
-if (session) {
+/*if (session) {
     log("You are already signed in!");
 } else {
  log("a");
     WL.login({ scope: "wl.signin" });
-}
+}*/
 function signin(){
 //session = WL.getSession();
   document.write("<p>hi logging in...</p>");
