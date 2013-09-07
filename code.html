@@ -21,7 +21,7 @@ log("b");
 var APP_CLIENT_ID = "0000000044100F5A"
 var REDIRECT_URL = "https://openskies.azurewebsites.net/code.html"
 
-WL.init({ client_id: APP_CLIENT_ID, redirect_uri: REDIRECT_URL, scope: "wl.signini+wl.skydrive+wil.skydrive_update+wil.offline_access", response_type: "token" });
+WL.init({ client_id: APP_CLIENT_ID, redirect_uri: REDIRECT_URL, scope: "wl.signini+wl.skydrive+wil.skydrive_update+wil.offline_access", response_type: "code" });
 WL.Event.subscribe("auth.login", onLogin);
 WL.Event.subscribe("auth.sessionChange", onSessionChange);
 
@@ -30,11 +30,11 @@ if (session) {
     log("You are already signed in!");
 } else {
  log("a");
-    WL.login({ scope: "wl.signin" });
+    WL.login({ scope: "wl.signini+wl.skydrive+wil.skydrive_update+wil.offline_access" });
 }
 function signin(){
 session = WL.getSession();
-WL.login({scope:"wl.signin"});
+WL.login({scope:"wl.signini+wl.skydrive+wil.skydrive_update+wil.offline_access"});
 }
 
  
