@@ -78,7 +78,6 @@ Code: <?php $code = $_GET["code"]; echo $code;?>
     WL.init({ client_id: client_id, redirect_uri: redirect_uri, response_type: "code", scope: scope });
 
     WL.ui({ name: "signin", element: "signin" });
-document.referrer;
 </script>
 </body>
 </html>
