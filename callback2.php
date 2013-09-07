@@ -9,6 +9,6 @@ function redirect($url, $permanent = false) {
 	exit();
 }
 $url2 = 'http://skyshare.azurewebsites.net/test.php/?code='.$code;
-redirect('http://skyshare.azurewebsites.net/test.php', false);
+redirect($url2, false);
 exit();
 ?>
