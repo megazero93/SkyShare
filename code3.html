@@ -1,0 +1,93 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<title>Code Page</title>
+	<script src="//js.live.net/v5.0/wl.js"></script>
+
+</head>
+<body>
+<h1>Hello</h1>
+<button id= "sign in" onclick="signin()">Sign In</button>
+
+<script type="text/javascript">
+document.write("<p>A</p>");
+
+       function log(msg) {
+    setTimeout(function() {
+        throw new Error(msg);
+    }, 0);}
+log("b");
+var APP_CLIENT_ID = "0000000048103E6B"
+var REDIRECT_URL = "https://login.live.com/oauth20_desktop.srf"
+//"https://openskies.azurewebsites.net/callback.php"
+
+WL.init({ client_id: APP_CLIENT_ID, 
+redirect_uri: REDIRECT_URL, 
+scope: "wl.signin+wl.skydrive+wl.skydrive_update+wl.offline_access+wl.basic", 
+response_type: "code" });
+//WL.Event.subscribe("auth.login", onLogin);
+//WL.Event.subscribe("auth.sessionChange", onSessionChange);
+
+var session = WL.getSession();
+if (session) {
+    log("You are already signed in!");
+} else {
+ log("a");
+ //   WL.login({ scope: "wl.signin" });
+}
+
+function winOpen(url){
+  return window.open(url,getWinName(url));
+}
+function winClose(url){
+  var win = window.open("",getWinName(url));
+  win.close();
+}
+function getWinName(url){
+  return "win" + url.replace(/[^A-Za-z0-9\-\_]*/g,"");
+}
+
+function signin(){
+//session = WL.getSession();
+  document.write("<p>hi logging in...</p>");
+  document.write(REDIRECT_URL);
+  WL.login({scope:["wl.signin","wl.skydrive","wl.skydrive_update","wl.offline_access","wl.basic"]}).then(
+	function(response){
+		document.write("logged in");
+	};}
+  document.write("<p>did it finish?</p>");
+  document.write("<input type=\"submit\" value=\"checksess\" onclick=\"checksess()\"></input>");
+//  <button id= "checksess" onclick="checksess()">Check session</button>
+}
+function checksess(){
+  document.write("<p>checking sess...</p>");
+  WL.getLoginStatus(function(response) {
+    alert("Your status is: " + response.status); 
+  });
+  document.write("<p>done getting login status</p>");
+/*  if (WL.getLoginStatus(function(response))) {
+    document.write("<p>got session</p>");
+  }
+  else {
+    document.write("<p>did not get session</p>");*/
+}
+
+function onLogin(){
+  document.write("<p>hi logged in</p>");
+}
+
+ 
+function onSessionChange() {
+    var session = WL.getSession();
+    if (session) {
+        log("Your session has changed.");
+    }
+}
+
+</script>
+
+
+
+</body>
+</html>
