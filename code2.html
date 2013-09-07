@@ -50,6 +50,7 @@ function checksess(){
   WL.getLoginStatus(function(response) {
     document.write("Your status is: " + response.status); 
   });
+  document.write("<p>done getting login status</p>");
 /*  if (WL.getLoginStatus(function(response))) {
     document.write("<p>got session</p>");
   }
