@@ -20,7 +20,7 @@
     </div>
     <div class="control-group">
       <label class="label" for="saveTo">Save To</label>
-      <button id="clickSky" onclick="skyDrive('url')">SkyDrive</button>
+      <button id="clickSky" onclick="skyDrive()">SkyDrive</button>
     </div>
   </div>
 
@@ -35,7 +35,8 @@
     filepicker.setKey('APQIuAkgBQmeW318veAMHz');
   }
   alwaysRun();
-  function skyDrive(url) {
+  function skyDrive() {
+    var url = document.getElementById("url").value;
     filepicker.exportFile(url,{service: 'SKYDRIVE'},{debug: 'TRUE'})
   }
 </script>
