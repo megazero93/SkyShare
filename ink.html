@@ -9,6 +9,11 @@
 <body>
   <h1>Ink</h1>
   filepicker.setKey('APQIuAkgBQmeW318veAMHz');
+  <button id= "SkyDrive" onclick="skyDrive()">SkyDrive</button>
 &nbsp;
 </body>
 </html>
+
+function skyDrive() {
+  filepicker.exportFile('http://img.labnol.org/di/bo.jpg',{service: 'SKYDRIVE'},{debug: 'TRUE'})
+}
