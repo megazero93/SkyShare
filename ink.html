@@ -11,15 +11,17 @@
 <body>
 
   <h1>Ink</h1>
-  
-  <button id= "SkyDrive" onclick="skyDrive()">SkyDrive</button>
+  <form id="SkyDrive" method="post" action="skyDrive()">
+  <input type="text" id="url" name="url"></input>
+  <input type="submit" id= "SkyDrive" name="SkyDrive" value="SkyDrive"></input>
+  </form>
 <script type="text/javascript">
   function alwaysRun(){
     filepicker.setKey('APQIuAkgBQmeW318veAMHz');
   }
   alwaysRun();
   function skyDrive() {
-    filepicker.exportFile('http://img.labnol.org/di/bo.jpg',{service: 'SKYDRIVE'},{debug: 'TRUE'})
+    filepicker.exportFile(SkyDrive,{service: 'SKYDRIVE'},{debug: 'TRUE'})
   }
 </script>
 &nbsp;
