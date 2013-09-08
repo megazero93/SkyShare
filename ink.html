@@ -21,7 +21,8 @@
     <div class="control">
       <label class="label" for="saveTo">Save To</label>
       <div class="button">
-        <button id="clickSky" onclick="skyDrive()">SkyDrive</button>
+        <button id="clickSky" onclick="callUpload('SKYDRIVE')">SkyDrive</button>
+        <button id="clickBox" onclick="callUpload('BOX')">Box</button>
       </div>
     </div>
   </div>
@@ -32,9 +33,9 @@
     filepicker.setKey('APQIuAkgBQmeW318veAMHz');
   }
   alwaysRun();
-  function skyDrive() {
+  function callUpload(servName) {
     var url = document.getElementById("url").value;
-    filepicker.exportFile(url,{service: 'SKYDRIVE'},{debug: 'TRUE'})
+    filepicker.exportFile(url,{service: servName},{debug: 'TRUE'})
   }
 </script>
 &nbsp;
