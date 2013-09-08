@@ -11,7 +11,10 @@
 <body>
 
   <h1>Ink</h1>
-
+  <label class="label" for="urlIn">Input Url</label>
+  <input type="text" id="url" class="input-xlarge">
+  <label class="label" for="saveTo">Save To</label>
+  <a href="#" onclick="skyDrive('url');return false;" class="button">SkyDrive</a>
   <form id="SkyDrive" method="post">
     <input type="text" id="url" name="url"></input>
     <button id= "SkyDriveSubmit" onclick="skyDrive(url)">SkyDrive</button>
