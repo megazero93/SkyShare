@@ -11,10 +11,19 @@
 <body>
 
   <h1>Ink</h1>
-  <label class="label" for="urlIn">Input Url</label>
-  <input type="text" id="url" class="input-xlarge">
-  <label class="label" for="saveTo">Save To</label>
-  <a href="#" onclick="skyDrive('url');return false;" class="button">SkyDrive</a>
+  <div class="control-group">
+    <label class="control-label" for="urlIn">Input Url</label>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <input type="text" id="url" class="input-xlarge">
+    </div>
+    <div class="control-group">
+      <label class="label" for="saveTo">Save To</label>
+      <button id="clickSky" onclick="skyDrive('url')">SkyDrive</button>
+    </div>
+  </div>
+
   <form id="SkyDrive" method="post">
     <input type="text" id="url" name="url"></input>
     <button id= "SkyDriveSubmit" onclick="skyDrive(url)">SkyDrive</button>
