@@ -19,6 +19,12 @@
       <input type="text" id="url" class="input-xlarge">
     </div>
     <div class="control">
+      <label class="label" for="saveFrom">Download From</label>
+      <div class="button">
+        <button id="saveFTP" onclick="callDownload('FTP')">FTP</button>
+      </div>
+    </div>
+    <div class="control">
       <label class="label" for="saveTo">Save To</label>
       <div class="button">
         <button id="clickBox" onclick="callUpload('BOX')">Box</button>
@@ -45,7 +51,11 @@
   alwaysRun();
   function callUpload(servName) {
     var url = document.getElementById("url").value;
-    filepicker.exportFile(url,{service: servName},{debug: 'TRUE'})
+    filepicker.exportFile(url,{service: servName})
+  }
+  function callDownload(servName) {
+    var url = document.getElementById("url").value;
+    filepicker.pick(url,{service: servName}})
   }
 </script>
 &nbsp;
