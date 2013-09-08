@@ -6,9 +6,21 @@
         <script src="//js.live.net/v5.0/wl.js"></script>
  </head>
 <script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
+  
+
 <body>
+
   <h1>Ink</h1>
-  filepicker.setKey('APQIuAkgBQmeW318veAMHz');
+  <button id= "SkyDrive" onclick="skyDrive()">SkyDrive</button>
+<script type="text/javascript">
+  function alwaysRun(){
+    filepicker.setKey('APQIuAkgBQmeW318veAMHz');
+  }
+  function skyDrive() {
+    filepicker.exportFile('http://img.labnol.org/di/bo.jpg',{service: 'SKYDRIVE'},{debug: 'TRUE'})
+  }
+</script>
 &nbsp;
 </body>
 </html>
+
